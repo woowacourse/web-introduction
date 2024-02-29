@@ -1,14 +1,20 @@
-const http = require('http');
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('.guestbook-form');
+    const nameInput = document.getElementById('name');
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const resetButton = document.querySelector('button[type="reset"]');
 
-const hostname = '127.0.0.1';
-const port = 3000;
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const name = nameInput.value;
+        const checkedBoxesCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+        alert(name + "님, 저와 " + checkedBoxesCount + "개의 취향이 같으시네요!");
+    });
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<h1>Hello World</h1>');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+    resetButton.addEventListener('click', function () {
+        checkboxes.forEach(function (checkbox) {
+            checkbox.checked = false;
+        });
+        nameInput.value = ''; // 이름 입력 필드도 초기화합니다.
+    });
 });

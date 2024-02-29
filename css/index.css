@@ -1,13 +1,200 @@
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+.title {
+  margin: 20px;
+}
+
+.introduction {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+  padding-left: 20px;
+}
+
+.introduction h1 {
+  color: #333;
+  border-bottom: 2px solid #e7e7e7;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.introduction ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.introduction ul li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.introduction ul li:last-child {
+  margin-bottom: 0;
+}
+
+header h1,
+header p {
+  margin: 0;
+}
+
+footer {
+  padding: 7vh 5vw;
+  border-top: 1px solid #ddd;
+}
+
+aside {
+  padding: 7vh 5vw;
+}
+
+.primary {
+  overflow: auto;
+  scroll-snap-type: both mandatory;
+  height: 86vh;
+}
+
+@media (min-width: 40em) {
+  main {
+    display: flex;
   }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
+
+  aside {
+    flex: 0 1 20vw;
+    order: 1;
+    border-right: 1px solid #ddd;
   }
+
+  .primary {
+    order: 2;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border: 0;
+}
+
+th,
+td {
+  border: 1px solid #aaa;
+  background-clip: padding-box;
+  scroll-snap-align: start;
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+thead {
+  z-index: 1000;
+  position: relative;
+}
+
+th,
+td {
+  padding: 0.6rem;
+  min-width: 6rem;
+  text-align: left;
+  margin: 0;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  border-top: 0;
+  background-clip: padding-box;
+}
+
+thead th.pin {
+  left: 0;
+  z-index: 1001;
+  border-left: 0;
+}
+
+tbody th {
+  background-clip: padding-box;
+  border-left: 0;
+}
+
+tbody {
+  z-index: 10;
+  position: relative;
+}
+
+tbody th {
+  position: sticky;
+  left: 0;
+}
+
+thead th,
+tbody th {
+  background-color: #f8f8f8;
+}
+
+.guestbook-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.guestbook-form h2 {
+  border-bottom: 2px solid #000;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"] {
+  width: 150px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.form-group .checkbox-label {
+  display: inline-block;
+  vertical-align: middle; /* 라벨을 중앙 정렬합니다 */
+  margin-left: 5px;
+}
+
+.form-group input[type="checkbox"] {
+  vertical-align: middle; /* 체크박스를 중앙 정렬합니다 */
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.checkbox-group label {
+  margin-left: 5px;
+}
+
+.form-group button {
+  padding: 10px 30px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-group button[type="reset"] {
+  background-color: #6c757d;
+}
